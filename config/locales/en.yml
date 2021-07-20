@@ -7,6 +7,11 @@ en:
         restrict_dependent_destroy:
           has_one: Cannot delete record because a dependent %{record} exists
           has_many: Cannot delete record because dependent %{record} exist
+# 追加
+  notice:
+    create: Book was created
+    update: Book was updated
+    destroy: Book was destroyed
   
   date:
     abbr_day_names:
@@ -210,7 +215,6 @@ en:
   time:
     am: am
     formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm

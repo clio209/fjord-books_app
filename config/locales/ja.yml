@@ -19,9 +19,10 @@ ja:
     editing_book: 編集する
     are_you_sure: 削除していいですか？
   
-  Book was successfully created: 登録されました
-  Book was successfully updated: 更新されました
-  Book was successfully destroyed: 削除されました
+  notice:
+    create: 登録されました
+    update: 更新されました
+    destroy: 削除されました
 
   date:
     abbr_day_names:
