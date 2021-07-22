@@ -20,9 +20,3 @@ module BooksApp
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
-
-# module I18nApp
-#   class Application < Rails::Application
-#     config.i18n.default_locale = :en # 追加
-#   end
-# end

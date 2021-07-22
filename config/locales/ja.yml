@@ -7,22 +7,6 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-  # 追加
-  button:
-    edit: 編集
-    back: 戻る
-    show: 詳細
-    index: 一覧
-    destroy: 削除
-    new_book: 新しい本を登録
-    books: 本一覧
-    editing_book: 編集する
-    are_you_sure: 削除していいですか？
-  
-  notice:
-    create: 登録されました
-    update: 更新されました
-    destroy: 削除されました
 
   date:
     abbr_day_names:
@@ -222,3 +206,21 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+
+  button:
+    edit: 編集
+    back: 戻る
+    show: 詳細
+    index: 一覧
+    destroy: 削除
+    new_book: 新しい本を登録
+  
+  headline:
+    books: 本一覧
+    editing_book: 編集する
+    
+  notice:
+    create: 登録されました
+    update: 更新されました
+    destroy: 削除されました
+    are_you_sure: 削除していいですか？
