@@ -5,8 +5,23 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, autofocus: true %>
   </div> 
+
+  div class="field">
+    <%= f.label :postal %><br />
+    <%= f.text_field :postal, autofocus: true %>
+  </div> 
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, autofocus: true %>
+  </div> 
+  
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
