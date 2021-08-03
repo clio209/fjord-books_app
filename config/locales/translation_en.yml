@@ -15,3 +15,11 @@ en:
         postal: Postal_Code
         address: Adress
         description: Description
+
+  layouts:
+    application:
+      edit_profile: Edit Profile
+      logout: Logout
+      sign_up: Sign Up
+      login: Login
+      logged_in_as: Logged in as

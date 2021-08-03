@@ -15,3 +15,11 @@ ja:
         postal: 郵便番号
         address: 住所
         description: 自己紹介
+
+  layouts:
+    application:
+      edit_profile: 編集
+      logout: ログアウト
+      sign_up: 登録
+      login: ログイン
+      logged_in_as: ログインユーザー
