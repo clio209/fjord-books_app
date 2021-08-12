@@ -9,3 +9,17 @@ ja:
         memo: メモ  #g
         picture: 画像  #g
         title: 題名  #g
+
+      user:
+        name: 名前
+        postal: 郵便番号
+        address: 住所
+        description: 自己紹介
+
+  layouts:
+    application:
+      edit_profile: 編集
+      logout: ログアウト
+      sign_up: 登録
+      login: ログイン
+      logged_in_as: ログインユーザー
