@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+
   def index
     @users = User.with_attached_avatar.order(:id).page(params[:page])
   end
@@ -23,5 +24,6 @@ class UsersController < ApplicationController
     @users = @user.followers
     render 'show_follow'
   end
+
 
 end

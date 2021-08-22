@@ -33,11 +33,6 @@
   <% end %>
 </p>
 
-<p>
-  <%= link_to "#{@user.following.count} followings", following_user_path(@user) %>
-  <%= link_to "#{@user.followers.count} followers", followers_user_path(@user) %>
-</p>
-
 <section class="stats">
   <%= render 'shared/stats' %>
 </section>

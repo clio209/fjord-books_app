@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   # ユーザーをフォローする
   def follow(other_user)
-    followings << other_user
+    following << other_user
   end
 
   # ユーザーのフォローを解除する
