@@ -24,13 +24,13 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
     @comment.save
-    redirect_to @commentable, notice: 'Comment was successfully created.'
+    redirect_to @commentable, notice: 'コメントが作成されました'
   end
 
   # PATCH/PUT /comments/1
   def update
     if @comment.update(comment_params)
-      redirect_to @comment, notice: 'Comment was successfully updated.'
+      redirect_to @comment, notice: 'コメントが更新されました'
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   def destroy
     @comment.destroy
-    redirect_to comments_url, notice: 'Comment was successfully destroyed.'
+    redirect_to comments_url, notice: 'コメントが削除されました'
   end
 
   private

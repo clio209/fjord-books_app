@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reports</h1>
+<h1><%= Report.model_name.human %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>User</th>
+      <th><%= Report.human_attribute_name(:title) %></th>
+      <th><%= Report.human_attribute_name(:content) %></th>
+      <th><%= Report.human_attribute_name(:user_id) %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,10 +19,10 @@
         <td><%= report.content %></td>
         <td><%= report.user_id %></td>
         <td><%= report.created_at.to_s(:datetime_jp) %></td>
-        <td><%= link_to 'Show', report %></td>
+        <td><%= link_to '詳細', report %></td>
         <% if report.user == current_user %>
-          <td><%= link_to 'Edit', edit_report_path(report) %></td>
-          <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to '編集', edit_report_path(report) %></td>
+          <td><%= link_to '削除', report, method: :delete, data: { confirm: 'よろしいですか?' } %></td>
         <% else %>
           <td></td>
           <td></td>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Report', new_report_path %>
+<%= link_to '日報を作成', new_report_path %>
