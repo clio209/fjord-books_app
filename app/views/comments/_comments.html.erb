@@ -1,5 +1,5 @@
 <h1><%= Comment.model_name.human %></h1>
-
+<% if commentable.comments.includes(:user).present? %>
 <table>
   <thead>
   <tr>
@@ -20,3 +20,6 @@
   <% end %>
   </tbody>
 </table>
+<% else %>
+<p>コメントはありません</p>
+<% end %>
