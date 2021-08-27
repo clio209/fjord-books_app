@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: %i[show edit update destroy]
 
   # GET /comments
   def index
@@ -7,8 +9,7 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1
-  def show
-  end
+  def show; end
 
   # GET /comments/new
   def new
@@ -16,8 +17,7 @@ class CommentsController < ApplicationController
   end
 
   # GET /comments/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /comments
   def create
