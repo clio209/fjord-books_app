@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :avatar
-  has_many :active_favorites,  class_name: 'favorite',
+  has_many :active_favorites,  class_name: 'Favorite',
                                    foreign_key: 'follower_id',
                                    dependent: :destroy,
                                    inverse_of: :follower
-  has_many :passive_favorites, class_name: 'favorite',
+  has_many :passive_favorites, class_name: 'Favorite',
                                    foreign_key: 'followed_id',
                                    dependent: :destroy,
                                    inverse_of: :followed
