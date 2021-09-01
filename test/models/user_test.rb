@@ -3,18 +3,28 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  test "#name_or_email" do
+  test '#name_or_email' do
     user = User.new(email: 'foo@example.com', name: '')
-    assert_equal = assert_equal 'foo@example.com', user.name_or_email
+    assert_equal 'foo@example.com', user.name_or_email
 
     user.name = 'Foo Bar'
-    assert_equal 'Foo Bar' , user.name_or_email
+    assert_equal 'Foo Bar', user.name_or_email
   end
 
-  test "#follow" do
-    me = User.create!(email: 'me@example.com, password: 'password)
-    he = User.create!(email: 'he@example.com, password: 'password)
+  def setup
+    @alice = users(:alice)
+    @bob = users(:bob)
+  end
 
-    assert me.follow
+  test '#follow' do
+    @alice.follow(@bob)
+    assert @alice.following?(@bob)
+    assert @bob.followed_by?(@alice)
+  end
+
+  test '#unfollow' do
+    @alice.follow(@bob)
+    @alice.unfollow(@bob)
+    assert_not @alice.following?(@bob)
   end
 end
