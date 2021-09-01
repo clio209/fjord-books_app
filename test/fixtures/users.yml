@@ -11,6 +11,3 @@ alice:
 
 bob:
   email: bob@example.com
-
-#two: {}
-# column: value
