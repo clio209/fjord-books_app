@@ -14,11 +14,24 @@ class UserTest < ActiveSupport::TestCase
   def setup
     @alice = users(:alice)
     @bob = users(:bob)
+    @carol = users(:carol)
   end
 
   test '#follow' do
     @alice.follow(@bob)
     assert @alice.following?(@bob)
+    assert @bob.followed_by?(@alice)
+  end
+
+  test '#following?' do
+    @alice.follow(@bob)
+    @alice.follow(@carol)
+    assert @alice.following?(@bob)
+  end
+
+  test '#followed_by?' do
+    @alice.follow(@bob)
+    @alice.follow(@carol)
     assert @bob.followed_by?(@alice)
   end
 
