@@ -18,9 +18,9 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test '#follow' do
+    assert_not @alice.following?(@bob)
     @alice.follow(@bob)
     assert @alice.following?(@bob)
-    assert @bob.followed_by?(@alice)
   end
 
   test '#following?' do
@@ -37,6 +37,7 @@ class UserTest < ActiveSupport::TestCase
 
   test '#unfollow' do
     @alice.follow(@bob)
+    assert @alice.following?(@bob)
     @alice.unfollow(@bob)
     assert_not @alice.following?(@bob)
   end
