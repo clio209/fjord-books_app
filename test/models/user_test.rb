@@ -26,7 +26,7 @@ class UserTest < ActiveSupport::TestCase
   test '#following?' do
     @alice.follow(@bob)
     @alice.follow(@carol)
-    assert @alice.following?(@bob)
+    assert @alice.active_relationships.where(following_id: @bob).exists?
   end
 
   test '#followed_by?' do
@@ -37,8 +37,8 @@ class UserTest < ActiveSupport::TestCase
 
   test '#unfollow' do
     @alice.follow(@bob)
-    assert @alice.following?(@bob)
+    assert @alice.active_relationships.where(following_id: @bob).exists?
     @alice.unfollow(@bob)
-    assert_not @alice.following?(@bob)
+    assert_not @alice.active_relationships.where(following_id: @bob).exists?
   end
 end
