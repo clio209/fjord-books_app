@@ -14,20 +14,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /comments/1
-  def update
-    if @comment.update(comment_params)
-      redirect_to @comment, notice: t('controllers.common.notice_update', name: t('comment'))
-      render :edit
-    end
-  end
-
-  # DELETE /comments/1
-  def destroy
-    @comment.destroy
-    redirect_to comments_url, notice: t('controllers.common.notice_destroy', name: t('comment'))
-  end
-
   private
 
   def set_comment
