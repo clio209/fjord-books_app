@@ -3,35 +3,21 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[show edit update destroy]
 
-  # GET /comments
-  def index
-    @comments = Comment.all
-  end
-
-  # GET /comments/1
-  def show; end
-
-  # GET /comments/new
-  def new
-    @comment = Comment.new
-  end
-
-  # GET /comments/1/edit
-  def edit; end
-
   # POST /comments
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
-    @comment.save
-    redirect_to @commentable, notice: 'コメントが作成されました'
+    if @comment.save
+     redirect_to @commentable, notice: t('controllers.common.notice_create', name: t('comment'))
+    else
+      flash[:alert] = t('controllers.common.notice_error')
+    end
   end
 
   # PATCH/PUT /comments/1
   def update
     if @comment.update(comment_params)
-      redirect_to @comment, notice: 'コメントが更新されました'
-    else
+      redirect_to @comment, notice: t('controllers.common.notice_update', name: t('comment'))
       render :edit
     end
   end
@@ -39,7 +25,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   def destroy
     @comment.destroy
-    redirect_to comments_url, notice: 'コメントが削除されました'
+    redirect_to comments_url, notice: t('controllers.common.notice_destroy', name: t('comment'))
   end
 
   private

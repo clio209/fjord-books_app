@@ -33,6 +33,7 @@
             <%= link_to t('views.common.sign_out'), destroy_user_session_path, method: :delete %>
           </li>
         </ul>
+        <p id="notice"><%= notice %></p>
       </div>
     <% end %>
     <% if notice.present? %>
