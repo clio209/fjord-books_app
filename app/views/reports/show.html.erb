@@ -1,4 +1,3 @@
-<!--<p id="notice"><%#= notice %></p>-->
 
 <p>
   <strong><%= Report.human_attribute_name(:title) %></strong>
@@ -11,7 +10,7 @@
 </p>
 
 <p>
-  <strong><%= Report.human_attribute_name(:user.name) %></strong>
+  <strong><%= User.human_attribute_name(:name) %></strong>
   <%= @report.user.name %>
 </p>
 

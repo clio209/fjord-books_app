@@ -22,41 +22,34 @@ class ReportsController < ApplicationController
   # POST /reports or /reports.json
   def create
     @report = current_user.reports.build(report_params)
-
-    respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: t('controllers.common.notice_create', name: t('report')) }
+        redirect_to @report, notice: t('controllers.common.notice_create', name: t('report'))
       else
-        format.html { render :new, status: :unprocessable_entity }
+        render action: "new", status: :unprocessable_entity
       end
-    end
   end
 
   # PATCH/PUT /reports/1 or /reports/1.json
   def update
-    if @report.user == current_user
-    respond_to do |format|
+    # if @report.user == current_user
       if @report.update(report_params)
-        format.html { redirect_to @report, notice: t('controllers.common.notice_update', name: t('report')) }
+        redirect_to @report, notice: t('controllers.common.notice_update', name: t('report'))
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        render action:"edit", status: :unprocessable_entity
       end
-    end
-    else
-      redirect_to reports_url
-    end
+    # else
+    #   redirect_to reports_url
+    # end
   end
 
   # DELETE /reports/1 or /reports/1.json
   def destroy
-    if  @report.user == current_user
+    # if  @report.user == current_user
     @report.destroy
-    respond_to do |format|
-      format.html { redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: t('report')) }
-      end
-    else
-      redirect_to reports_url
-    end
+      redirect_to reports_url, notice: t('controllers.common.notice_destroy', name: t('report'))
+    # else
+    #   redirect_to reports_url
+    # end
   end
 
   private
@@ -68,6 +61,6 @@ class ReportsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def report_params
-    params.require(:report).permit(:title, :content, )
+    params.require(:report).permit(:title, :content)
   end
 end

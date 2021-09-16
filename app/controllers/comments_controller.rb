@@ -11,7 +11,12 @@ class CommentsController < ApplicationController
      redirect_to @commentable, notice: t('controllers.common.notice_create', name: t('comment'))
     else
       flash[:alert] = t('controllers.common.notice_error')
+      render action: "new"
     end
+  end
+
+  def new
+    @comment = @commentable.comments.new
   end
 
   private
