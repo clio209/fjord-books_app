@@ -53,9 +53,7 @@ class ReportsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_report
-    @reports = current_user.reports
-    @report = @reports.find_by(id:params[:id])
-    redirect_to new_report_path unless @report
+    @report = current_user.reports.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
